@@ -51,7 +51,7 @@ export const authService = {
       // Check if admin
       if (userData.userType === 'admin') {
         // Verify admin credentials
-        const adminId = process.env.REACT_APP_ADMIN_ID;
+        const adminId = import.meta.env.VITE_ADMIN_ID;
         if (user.uid !== adminId) {
           throw new Error('Not authorized as admin');
         }
